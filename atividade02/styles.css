@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'Minecraftia';
+    src: url('fonts/Minecraftia.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Minecraftia', monospace;
+    background-color: #eec585;
+    width: 80%;
+    margin-left: 10%;
+}
+
+main {
+    background-color: #fafafa;
+    padding: 50px;
+    border-radius: 12px;
+}
+
+nav {
+    background-image: url('./img-nav.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+nav > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+nav > ul > li {
+    color: #fafafa;
+    text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+             1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+}
+
+@media (max-width: 650px) {
+    nav > ul {
+        flex-direction: column;
+        align-items: left;
+        margin-left: 20px
+    }
+
+    nav > ul > li {
+        margin: 5px 0;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: #eec585;
+}
+
+
+#hr-top {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    max-width: 1000px;
+    border-radius: 12px;
+    border: solid 2px #fafafa;
+
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    max-width: 1200px;
+    border-radius: 12px;
+    border: solid 2px #eec585;
+}
+
+
+section {
+    text-align: justify;
+}
