@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Versões do Windows</h1>
+        <p>Esta página contém <strong>informações</strong> sobre as versões do Windows.</p>
+        <button id="dark-mode-toggle" onclick="toggleDarkMode()">Alternar Modo Escuro</button>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#sistema">Sistema</a></li>
+                <li><a href="#funcionalidades">funcionalidades</a></li>
+                <li><a href="#requisitos">Requisitos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <aside>
+            <h2>Links Úteis</h2>
+            <ul>
+                <li><a href="https://www.microsoft.com/pt-br/windows">Site Oficial do Windows</a></li>
+                <li><a href="https://support.microsoft.com/pt-br/windows">Suporte da Microsoft</a></li>
+                <li><a href="https://www.microsoft.com/pt-br/store/b/windows">Loja Microsoft</a></li>
+            </ul>
+            <div class="fakeimg">Imagem</div>
+            <h2>Recursos Adicionais</h2>
+            <ul>
+                <li><a href="https://www.microsoft.com/pt-br/windows/features">Recursos do Windows</a></li>
+                <li><a href="https://www.microsoft.com/pt-br/windows/windows-11">Windows 11</a></li>
+                <li><a href="https://www.microsoft.com/pt-br/windows/windows-10">Windows 10</a></li>
+                <li><a href="https://www.microsoft.com/pt-br/windows/windows-8">Windows 8</a></li>
+            </ul>
+            <div class="fakeimg">Imagem</div>
+            <h2>Documentação</h2>
+            <ul>
+                <li><a href="https://docs.microsoft.com/pt-br/windows/">Documentação do Windows</a></li>
+                <li><a href="https://docs.microsoft.com/pt-br/windows/win32/api/">API do Windows</a></li>
+                <li><a href="https://docs.microsoft.com/pt-br/windows/win32/uxguide/">Guia de UX do Windows</a></li>
+                <li><a href="https://docs.microsoft.com/pt-br/windows/win32/shell/">Shell do Windows</a></li>
+            </ul>
+            <div class="fakeimg">Imagem</div>
+            <h2>Comunidade</h2>
+            <ul>
+                <li><a href="https://answers.microsoft.com/pt-br/windows">Fórum de Perguntas e Respostas</a></li>
+                <li><a href="https://social.technet.microsoft.com/forums/pt-br/home?category=windows">Comunidade TechNet</a></li>
+                <li><a href="https://www.reddit.com/r/windows/">Subreddit do Windows</a></li>
+            </ul>
+            <div class="fakeimg">Imagem</div>
+        </aside>
+        <section class="conteudo">
+
+            <section id="inicio">
+                <h2>Bem-vindo ao Windows</h2>
+                <p>Explore as diferentes versões do sistema operacional Windows.</p>
+            </section>
+            
+            <section id="sobre">
+                <h2>Sobre o Windows</h2>
+                <p>O Windows é um sistema operacional desenvolvido pela Microsoft.</p>
+                
+                <p>As versões mais conhecidas incluem:</p>
+                <ul>
+                    <li>Windows 10</li>
+                    <li>Windows 8</li>
+                    <li>Windows 7</li>
+                    <li>Windows Vista</li>
+                    <li>Windows XP</li>
+                    <li>Windows 2000</li>
+                </ul>
+            <p>Para mais informações, visite o site oficial da Microsoft.</p>
+            <div class="fakeimg">Imagem</div>
+            </section>
+            <section id="sistema">
+                <h2>Sistema Operacional</h2>
+                <p>O Windows é um sistema operacional amplamente utilizado em todo o mundo.</p>
+                <p>Ele oferece uma interface gráfica amigável e suporte a uma ampla gama de aplicativos.</p>
+                <p>As versões mais recentes incluem recursos avançados de segurança e desempenho.</p>
+                <div class="fakeimg">Imagem</div>
+            </section>
+            <section id="funcionalidades">
+                <h2>Funcionalidades</h2>
+                <p>O Windows oferece diversas funcionalidades, incluindo:</p>
+                <ul>
+                    <li>Gerenciamento de arquivos</li>
+                    <li>Suporte a dispositivos periféricos</li>
+                    <li>Interface de usuário intuitiva</li>
+                    <li>Atualizações regulares de segurança</li>
+                </ul>
+                
+            </section>
+            <section id="requisitos">
+                <h2>Requisitos do Sistema</h2>
+                <p>Os requisitos do sistema variam de acordo com a versão do Windows.</p>
+                <p>Geralmente, é necessário um processador compatível, memória RAM adequada e espaço em disco suficiente.</p>
+                <div class="fakeimg">Imagem</div>
+            </section>
+            
+            <section id="contato">
+                <h2>Contato</h2>
+                <p>Para mais informações, entre em contato conosco.</p>
+            </section> 
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Versões do Windows. Todos os direitos reservados.</p>
+        <p>Desenvolvido por [Seu Nome]</p>
+        <p>Para mais informações, visite o <a href="https://www.microsoft.com/pt-br/windows">site oficial do Windows</a>.</p>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            let body = document.body;
+            body.classList.toggle("dark-mode");
+        }
+    </script>
+</body>
+</html>
