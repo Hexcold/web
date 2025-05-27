@@ -1,0 +1,30 @@
+:root { /* Eu achava que era para fazer dark-mode por isso adicionei variaevis, só depois de ler novamente que eu entendi o que estava pedindoq*/
+    --cor-fundo-header: #f0f0f0;
+    --cor-fundo: #fafafa;
+    --cor-borda: #bdc3c7;
+    --text-color: #000000;
+}
+
+table {
+    width: 500px;
+    border-collapse: collapse;
+    border: 1px solid var(--cor-borda);
+}
+
+thead {
+    background-color: var(--cor-fundo-header);
+    color: var(--text-color);
+    border: 1px solid var(--cor-borda);
+}
+
+tbody {
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda)
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid var(--cor-borda);
+    text-align: center;
+}
