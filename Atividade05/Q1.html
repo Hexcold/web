@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lista de Produtos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f4f4f4;
+    }
+
+    .acima-media {
+      background-color: #d9fdd3;
+    }
+
+    .mais-caro {
+      background-color: #ffcccc;
+    }
+
+    .mais-barato {
+      background-color: #cce5ff;
+    }
+
+    .erro {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Produtos</h1>
+  <div id="resultado"></div>
+
+  <script>
+    function gerarProdutos() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const numero = Math.floor(Math.random() * 100);
+          if (numero % 2 === 0) {
+            const produtos = Array.from({ length: 10 }, (_, i) => ({
+              id: i + 1,
+              nome: `Produto ${i + 1}`,
+              tipo: ['Eletrônico', 'Roupas', 'Alimento', 'Brinquedo'][i % 4],
+              preco: Math.floor(Math.random() * 500 + 10)
+            }));
+            resolve(produtos);
+          } else {
+            reject({ res: "ERROR", msg: "ERRO NO SISTEMA" });
+          }
+        }, 4000);
+      });
+    }
+
+    async function carregarProdutos() {
+      const div = document.getElementById('resultado');
+      try {
+        const produtos = await gerarProdutos();
+        let total = 0;
+        let maisCaro = produtos[0];
+        let maisBarato = produtos[0];
+
+        produtos.forEach(p => {
+          total += p.preco;
+          if (p.preco > maisCaro.preco) maisCaro = p;
+          if (p.preco < maisBarato.preco) maisBarato = p;
+        });
+
+        const media = total / produtos.length;
+
+        const tabela = `
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th><th>Nome</th><th>Tipo</th><th>Preço (R$)</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${produtos.map(p => {
+                let classe = '';
+                if (p.preco > media) classe = 'acima-media';
+                if (p.id === maisCaro.id) classe = 'mais-caro';
+                if (p.id === maisBarato.id) classe = 'mais-barato';
+                return `<tr class="${classe}">
+                  <td>${p.id}</td>
+                  <td>${p.nome}</td>
+                  <td>${p.tipo}</td>
+                  <td>${p.preco.toFixed(2)}</td>
+                </tr>`;
+              }).join('')}
+            </tbody>
+          </table>
+          <p><strong>Média:</strong> R$ ${media.toFixed(2)}</p>
+          <p><strong>Mais caro:</strong> ${maisCaro.nome} - R$ ${maisCaro.preco.toFixed(2)}</p>
+          <p><strong>Mais barato:</strong> ${maisBarato.nome} - R$ ${maisBarato.preco.toFixed(2)}</p>
+        `;
+
+        div.innerHTML = tabela;
+      } catch (erro) {
+        div.innerHTML = `<p class="erro">${erro.msg}</p>`;
+      }
+    }
+
+    carregarProdutos();
+  </script>
+</body>
+</html>
